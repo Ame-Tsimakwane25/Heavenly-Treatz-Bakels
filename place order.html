@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heavenly Treatz Bakels</title>
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place an Order - Heavenly Treats Bakels</title>
 
-    <!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+<style>
 
 body{
 font-family: Arial, sans-serif;
@@ -100,10 +100,27 @@ margin-top:40px;
 
 </style>
 
+
+<script>
+
+function showMessage(){
+event.preventDefault(); 
+document.getElementById("confirmation").style.display="block";
+}
+
+function closePopup(){
+document.getElementById("confirmation").style.display="none";
+}
+
+</script>
+
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Heavenly Treatz Bakels!</h1>
+
+<header>
+<h1>Heavenly Treatz Bakels</h1>
+</header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -152,36 +169,75 @@ margin-top:40px;
 
 </nav>
 
-    </header>
-    <main>
-        <p>Your one-stop shop for all your baking needs. We offer a wide range of high-quality ingredients, tools, and accessories to help you create delicious treats. Whether you're a professional baker or just starting out, we have everything you need to make your baking experience enjoyable and successful.</p>
-        <h2>Our Products</h2>
-        <ul>
-            <li>Flours and Sugars</li>
-            <li>Chocolate and Cocoa</li>
-            <li>Frosting and Fillings</li>
-            <li>Baking Tools and Accessories</li>
-            <li>Specialty Ingredients</li>
-            <li>Custom Made Cakes</li>
-        </ul>
-        <p> Here are a few of our most popular products that you are most likely to find in our store: </p>
-                <img src="flour&sugar.jpg" alt="Flour and Sugar" width="200" height="300">
-                <img src="chocs&cocoa.jpg" alt="Chocolate and Cocoa" width="200" height="300">
-                <img src="frost.jpg" alt="Frosting and Fillings" width="200" height="300">
-                <img src="baking pack.jpg" alt="Baking Tools and Accessories" width="200" height="300">
-                <img src="ingredient pack.jpg" alt="Specialty Ingredients" width="200" height="300">
-                <img src="A delicious cake.jpeg" alt="Custom Made Cakes" width="200" height="300">
-    <p>Visit our store or shop online to explore our full range of products. Happy baking!</p>
-    </main>
-    <footer>
+<main>
+
+<h1>Place Your Order</h1>
+
+<p>Please fill in the form below to place your cake order.</p>
+
+<form onsubmit="showMessage()">
+
+<label>Full Name:</label><br>
+<input type="text" required><br><br>
+
+<label>Phone Number:</label><br>
+<input type="tel" required><br><br>
+
+<label>Email Address:</label><br>
+<input type="email" required><br><br>
+
+<label>Select Product:</label><br>
+<select required>
+<option>Customized Basic Cake</option>
+<option>Customized Wedding Cake</option>
+<option>Customized Character Cake</option>
+<option>6 Cupcakes Package</option>
+<option>12 Cupcakes Package</option>
+<option>6 Cakesicles</option>
+<option>Bento Package</option>
+</select><br><br>
+
+<label>Cake Flavour:</label><br>
+<select>
+<option>Vanilla</option>
+<option>Chocolate</option>
+<option>Red Velvet</option>
+<option>Strawberry</option>
+</select><br><br>
+
+<label>Quantity:</label><br>
+<input type="number" min="1" required><br><br>
+
+<label>Pickup Date:</label><br>
+<input type="date" required><br><br>
+
+<label>Additional Instructions:</label><br>
+<textarea rows="4" cols="30"></textarea><br><br>
+
+<input type="submit" value="Place Order">
+<input type="reset" value="Clear Form">
+
+</form>
+
+
+<div id="confirmation" class="popup">
+
+<h2>Order Submitted</h2>
+
+<p>Thank you for choosing Heavenly Treats Bakels.  
+We will contact you to confirm your order details.</p>
+
+<button onclick="closePopup()">Close</button>
+
+</div>
+<footer>
         <p>&copy; 2026 Heavenly Treatz Bakels. All rights reserved.</p>
     </footer>
 
-<!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
-
