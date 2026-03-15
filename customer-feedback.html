@@ -97,6 +97,14 @@ padding:15px;
 margin-top:40px;
 }
 
+.order-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+}
+
 </style>
 
 
@@ -123,7 +131,7 @@ margin-top:40px;
                         <p><b>Quantity:</b> ${order.quantity}</p>
                         <p><b>Pickup Date:</b> ${order.pickupDate}</p>
                         <p><b>Instructions:</b> ${order.instructions}</p>
-                        <p><b>Status:</b> ${order.status}</p>
+                        <p><b>Status:</b> ${order.status ? order.status : "Pending"}</p>
                         <p><b>Feedback Sent:</b> ${order.feedback ? order.feedback : "No feedback yet"}</p>
 
                         <label><b>Send Feedback to Customer:</b></label><br>
@@ -221,14 +229,16 @@ margin-top:40px;
 
 <main>
 
-    <h1>Orders Dashboard</h1>
-    <p>Welcome to the orders dashboard. Here you can view all customer orders and send feedback to your beloved customers.</p>
+<h1>Orders Dashboard</h1>
+<p>Welcome to the orders dashboard.</p>
 
-    <div id="ordersContainer"></div>
+<div id="ordersContainer"></div>
 
-    <footer>
-        <p>&copy; 2026 Heavenly Treatz Bakels. All rights reserved.</p>
-    </footer>
+</main>
+
+<footer>
+<p>&copy; 2026 Heavenly Treatz Bakels</p>
+</footer>
 
     <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

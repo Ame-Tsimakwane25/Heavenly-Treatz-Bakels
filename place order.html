@@ -103,13 +103,47 @@ margin-top:40px;
 
 <script>
 
-function showMessage(){
-event.preventDefault(); 
+function saveOrder(event){
+
+event.preventDefault();
+
+let fullName = document.getElementById("fullname").value;
+let phone = document.getElementById("phone").value;
+let email = document.getElementById("email").value;
+let product = document.getElementById("product").value;
+let flavour = document.getElementById("flavour").value;
+let quantity = document.getElementById("quantity").value;
+let pickupDate = document.getElementById("pickupDate").value;
+let instructions = document.getElementById("instructions").value;
+
+let order = {
+id: Date.now(),
+fullName: fullName,
+phone: phone,
+email: email,
+product: product,
+flavour: flavour,
+quantity: quantity,
+pickupDate: pickupDate,
+instructions: instructions
+};
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+orders.push(order);
+
+localStorage.setItem("orders", JSON.stringify(orders));
+
 document.getElementById("confirmation").style.display="block";
+
+document.getElementById("orderForm").reset();
+
 }
 
 function closePopup(){
+
 document.getElementById("confirmation").style.display="none";
+
 }
 
 </script>
@@ -175,19 +209,22 @@ document.getElementById("confirmation").style.display="none";
 
 <p>Please fill in the form below to place your cake order.</p>
 
-<form onsubmit="showMessage()">
+<form id="orderForm" onsubmit="saveOrder(event)">
 
 <label>Full Name:</label><br>
-<input type="text" required><br><br>
+<form id="orderForm" onsubmit="saveOrder(event)">
 
-<label>Phone Number:</label><br>
-<input type="tel" required><br><br>
+<label>Full Name</label>
+<input type="text" id="fullname" required>
 
-<label>Email Address:</label><br>
-<input type="email" required><br><br>
+<label>Phone Number</label>
+<input type="tel" id="phone" required>
 
-<label>Select Product:</label><br>
-<select required>
+<label>Email Address</label>
+<input type="email" id="email" required>
+
+<label>Select Product</label>
+<select id="product" required>
 <option>Customized Basic Cake</option>
 <option>Customized Wedding Cake</option>
 <option>Customized Character Cake</option>
@@ -195,24 +232,24 @@ document.getElementById("confirmation").style.display="none";
 <option>12 Cupcakes Package</option>
 <option>6 Cakesicles</option>
 <option>Bento Package</option>
-</select><br><br>
+</select>
 
-<label>Cake Flavour:</label><br>
-<select>
+<label>Cake Flavour</label>
+<select id="flavour">
 <option>Vanilla</option>
 <option>Chocolate</option>
 <option>Red Velvet</option>
 <option>Strawberry</option>
-</select><br><br>
+</select>
 
-<label>Quantity:</label><br>
-<input type="number" min="1" required><br><br>
+<label>Quantity</label>
+<input type="number" id="quantity" min="1" required>
 
-<label>Pickup Date:</label><br>
-<input type="date" required><br><br>
+<label>Pickup Date</label>
+<input type="date" id="pickupDate" required>
 
-<label>Additional Instructions:</label><br>
-<textarea rows="4" cols="30"></textarea><br><br>
+<label>Additional Instructions</label>
+<textarea id="instructions"></textarea>
 
 <input type="submit" value="Place Order">
 <input type="reset" value="Clear Form">
