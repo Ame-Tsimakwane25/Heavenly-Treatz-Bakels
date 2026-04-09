@@ -228,13 +228,18 @@ table tr:nth-child(even){
     cursor: pointer;
 }
 
-.logo-img{
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+.logo {
+  width: 50px;       
+  height: 50px;
+  object-fit: cover;
 }
 
-.brand-text{
-    font-weight: bold;
-    color: white
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  font-size: 18px;
+  font-weight: bold;
 }
