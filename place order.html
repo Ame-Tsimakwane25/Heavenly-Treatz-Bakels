@@ -22,6 +22,7 @@ let product = document.getElementById("product").value;
 let flavour = document.getElementById("flavour").value;
 let quantity = document.getElementById("quantity").value;
 let pickupDate = document.getElementById("pickupDate").value;
+let instructions = document.getElementById("instructions").value;
 let paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
 
 let order = {
@@ -65,7 +66,7 @@ let paymentInfo = document.getElementById("paymentInfo");
 
 if(method === "Mobile Money"){
 
-paymentInfo.innerHTML = "Send payment to Mobile Money number: +267 71 611 389";
+paymentInfo.innerHTML = "BANK: FNB| Ewallet & PayToCell: +267 71 611 389";
 
 }
 
@@ -124,7 +125,7 @@ paymentInfo.innerHTML = "Payment will be made when collecting the order.";
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="place order.html">Place Order</a>
+                        <a class="nav-link active" href="place order.html">Place Order</a>
                     </li>
 
                     <li class="nav-item">
@@ -144,12 +145,10 @@ paymentInfo.innerHTML = "Payment will be made when collecting the order.";
 </nav>
 
 <main>
-
-<h1>Place Your Order</h1>
+<h2>Place Your Order</h2>
 
 <p>Please fill in the form below to place your cake order.</p>
 
-<label>Full Name:</label><br>
 <form id="orderForm" onsubmit="saveOrder(event)">
 
 <label>Full Name</label>
@@ -208,8 +207,7 @@ Bank Transfer
 <div id="paymentInfo"></div>
 
 <label>Additional Instructions</label>
-<textarea 
-id="let instructions = document.getElementById("instructions").value;" rows="4" placeholder="Any specific requests or instructions for your order?"></textarea>
+<textarea id="instructions" rows="4" placeholder="Any specific requests or instructions for your order?"></textarea>
 
 <input type="submit" value="Place Order">
 <input type="reset" value="Clear Form">
@@ -219,13 +217,13 @@ id="let instructions = document.getElementById("instructions").value;" rows="4" 
 
 <div id="confirmation" class="popup">
 
-<h2>Order Submitted</h2>
+<h3>Order Submitted</h3>
 
 <p>Thank you for choosing Heavenly Treats Bakels.  
 We will contact you to confirm your order details.
 
 Please note that 45% deposit is required to secure your order.
-Full amount shall be payed upon pickup.</p>
+Full amount shall be paid upon pickup.</p>
 
 <button onclick="closePopup()">Close</button>
 
