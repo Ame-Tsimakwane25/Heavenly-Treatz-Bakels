@@ -6,167 +6,230 @@
     <title>Heavenly Treatz Bakels</title>
 
     <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Heavenly Treatz Bakels!</h1>
+
+<header>
+<h1>Heavenly Treatz Bakels</h1>
+</header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
 
-     <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="Heavenly Treatz Bakels Logo.jpg" alt="Logo" class="logo me-2">
+            <span class="navbar-text text-white">Heavenly Treatz Bakels</span>
+        </a>
 
-<a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="Heavenly Treatz Bakels Logo.jpg" alt="Logo" class="logo me-2">
-       <span class="navbar-text text-white">Heavenly Treatz Bakels</span>
-</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
 
-     <span class="navbar-toggler-icon"></span>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
 
-</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="about us.html">About Us</a>
+                </li>
 
-      <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
-                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="store.html">Store</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="about us.html">About Us</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="place order.html">Place Order</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="store.html">Store</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customer-feedback.html">Customer Feedback</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact us.html">Contact</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="place order.html">Place Order</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="customer-feedback.html">Customer Feedback</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact us.html">Contact</a>
-                    </li>
-
-     </ul>
-
-     </div>
+            </ul>
+        </div>
 
     </div>
-
 </nav>
+</header>
 
-    </header>
-   <main>
+<main>
 
     <div class="content-container">
 
         <div class="content-box">
-            <h2>Welcome</h2>
-            <p>Your one-stop shop for all your baking needs. We offer a wide range of high-quality ingredients, tools, and accessories to help you create delicious treats.</p>
+            <h2>Welcome to Our Bakery</h2>
+            <p>
+                Heavenly Treatz Bakels is your one-stop shop for cakes, baking ingredients,
+                baking tools, and sweet treats. We are passionate about making baking simple,
+                enjoyable, and special for every customer.
+            </p>
+            <p>
+                Whether you want a cake for a birthday, wedding, graduation, or any other event,
+                we are here to help make your celebration more memorable.
+            </p>
         </div>
 
         <div class="content-box">
-            <h2>Our Products</h2>
+            <h2>What We Offer</h2>
             <ul>
-                <li>Flours and Sugars</li>
-                <li>Chocolate and Cocoa</li>
-                <li>Frosting and Fillings</li>
+                <li>Customized Cakes</li>
+                <li>Cupcakes and Bento Packages</li>
+                <li>Baking Ingredients</li>
                 <li>Baking Tools and Accessories</li>
-                <li>Specialty Ingredients</li>
-                <li>Custom Made Cakes</li>
+                <li>Baking Equipment</li>
+                <li>Baking Lessons</li>
             </ul>
         </div>
 
     </div>
 
-    <p>Here are a few of our most popular products that you are most likely to find in our store:</p>
+    <div class="content-container">
 
-    <div class="container">
-        <div class="row">
+        <div class="content-box">
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="flour&sugar.jpg" class="card-img-top" alt="Flour and Sugar">
-                    <div class="card-body">
-                        <h5 class="card-title">Flour and Sugar</h5>
-                    </div>
+            <h2 class="text-center">Our Popular Cakes</h2>
+            <p class="text-center">
+                Take a look at some of the cakes we have made.
+            </p>
+
+            <div id="cakeCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#cakeCarousel" data-bs-slide-to="5"></button>
                 </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="chocs&cocoa.jpg" class="card-img-top" alt="Chocolate and Cocoa">
-                    <div class="card-body">
-                        <h5 class="card-title">Chocolate and Cocoa</h5>
-                    </div>
-                </div>
-            </div>
+                <div class="carousel-inner">
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="frost.jpg" class="card-img-top" alt="Frosting and Fillings">
-                    <div class="card-body">
-                        <h5 class="card-title">Frosting and Fillings</h5>
+                    <div class="carousel-item active">
+                        <img src="Birthday Cake.jpeg" class="d-block w-100" alt="Birthday Cake">
+                        <div class="carousel-caption">
+                            <h5>Birthday Cake</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="baking pack.jpg" class="card-img-top" alt="Baking Tools and Accessories">
-                    <div class="card-body">
-                        <h5 class="card-title">Baking Tools and Accessories</h5>
+                    <div class="carousel-item">
+                        <img src="Wedding Cake 1.jpeg" class="d-block w-100" alt="Wedding Cake">
+                        <div class="carousel-caption">
+                            <h5>Wedding Cake</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="ingredient pack.jpg" class="card-img-top" alt="Specialty Ingredients">
-                    <div class="card-body">
-                        <h5 class="card-title">Specialty Ingredients</h5>
+                    <div class="carousel-item">
+                        <img src="Character Cake.jpeg" class="d-block w-100" alt="Character Cake">
+                        <div class="carousel-caption">
+                            <h5>Character Cake</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="A delicious cake.jpeg" class="card-img-top" alt="Custom Made Cakes">
-                    <div class="card-body">
-                        <h5 class="card-title">Custom Made Cakes</h5>
+                    <div class="carousel-item">
+                        <img src="Cupcake Pack.jpeg" class="d-block w-100" alt="Cupcakes">
+                        <div class="carousel-caption">
+                            <h5>Cupcakes</h5>
+                        </div>
                     </div>
+
+                    <div class="carousel-item">
+                        <img src="Bento Pack 1.jpeg" class="d-block w-100" alt="Bento Cake">
+                        <div class="carousel-caption">
+                            <h5>Bento Cake</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="Custom Made 1.jpeg" class="d-block w-100" alt="Custom Cake">
+                        <div class="carousel-caption">
+                            <h5>Custom Cake</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="Cake sickles.jpg" class="d-block w-100" alt="Cake Sickles">
+                        <div class="carousel-caption">
+                            <h5>Cake Sickles</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="Girl Character cake.jpeg" class="d-block w-100" alt="Girl Cake">
+                        <div class="carousel-caption">
+                            <h5>Girl Cake</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="Cartoon cake.jpeg" class="d-block w-100" alt="Cartoon Cake">
+                        <div class="carousel-caption">
+                            <h5>Cartoon Cake</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="Customized Cake.jpeg" class="d-block w-100" alt="Customized Cake">
+                        <div class="carousel-caption">
+                            <h5>Customized Cake</h5>
+                        </div>
+                    </div>
+
                 </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#cakeCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#cakeCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
             </div>
 
         </div>
+
     </div>
 
-    <p>Visit our store or shop online to explore our full range of products. Happy baking!</p>
+    <div class="content-container">
+
+        <div class="content-box">
+            <h2>Why Choose Us</h2>
+            <p>
+                We focus on quality, creativity, and customer satisfaction. Our products are made with care,
+                and we always try to meet our customers’ needs.
+            </p>
+            <p>
+                Visit our store, explore our gallery, or place an order online to enjoy our baking products and services.
+            </p>
+        </div>
+
+    </div>
 
 </main>
 
-    <footer>
-        <p>&copy; 2026 Heavenly Treatz Bakels. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Heavenly Treatz Bakels. All rights reserved.</p>
+</footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
-
