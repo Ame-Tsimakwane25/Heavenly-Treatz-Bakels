@@ -1,6 +1,6 @@
 body{
     font-family: Arial, sans-serif;
-    background-image: url("Background.jpg");
+    background-image: url("HTB\ background\ banner.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,8 +9,6 @@ body{
 }
 
 header{
-    background: #ffd6e8;
-    padding: 20px;
     text-align: center;
 }
 
