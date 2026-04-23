@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders  - Heavenly Treatz Bakels</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders - Heavenly Treatz Bakels</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
-    <script>
-        function displayOrders(){
-            let orders = JSON.parse(localStorage.getItem("orders")) || [];
-            let container = document.getElementById("ordersContainer");
-            container.innerHTML = "";
+<script>
+function displayOrders(){
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let container = document.getElementById("ordersContainer");
+    container.innerHTML = "";
 
-            if(orders.length === 0){
-                container.innerHTML = "<p>No orders have been placed yet.</p>";
-                return;
-            }
+    if(orders.length === 0){
+        container.innerHTML = "<p>No orders have been placed yet.</p>";
+        return;
+    }
 
-            orders.forEach(function(order, index){
-                container.innerHTML += `
-                    <div class="order-box">
-                        <h3>Order ${index + 1}</h3>
-                        <p><b>Customer Name:</b> ${order.fullName}</p>
-                        <p><b>Phone:</b> ${order.phone}</p>
-                        <p><b>Email:</b> ${order.email}</p>
-                        <p><b>Product:</b> ${order.product}</p>
-                        <p><b>Flavour:</b> ${order.flavour}</p>
-                        <p><b>Quantity:</b> ${order.quantity}</p>
-                        <p><b>Pickup Date:</b> ${order.pickupDate}</p>
-                        <p><b>Payment Method:</b> ${order.paymentMethod}</p>
-                        <p><b>Status:</b> ${order.status ? order.status : "Pending"}</p>
-                        <p><b>Feedback Sent:</b> ${order.feedback ? order.feedback : "No feedback yet"}</p>
+    orders.forEach(function(order, index){
+        container.innerHTML += `
+            <div class="order-box">
+                <h3>Order ${index + 1}</h3>
+                <p><b>Customer Name:</b> ${order.fullName}</p>
+                <p><b>Phone:</b> ${order.phone}</p>
+                <p><b>Email:</b> ${order.email}</p>
+                <p><b>Product:</b> ${order.product}</p>
+                <p><b>Flavour:</b> ${order.flavour}</p>
+                <p><b>Quantity:</b> ${order.quantity}</p>
+                <p><b>Pickup Date:</b> ${order.pickupDate}</p>
+                <p><b>Payment Method:</b> ${order.paymentMethod}</p>
+                <p><b>Status:</b> ${order.status ? order.status : "Pending"}</p>
+                <p><b>Feedback Sent:</b> ${order.feedback ? order.feedback : "No feedback yet"}</p>
 
-                        <label><b>Send Feedback to Customer:</b></label><br>
-                        <textarea id="feedback-${order.id}" placeholder="Write feedback for your beloved customer...">${order.feedback || ""}</textarea><br>
+                <label class="form-label"><b>Send Feedback to Customer:</b></label>
+                <textarea id="feedback-${order.id}" class="form-control mb-3" placeholder="Write feedback for your beloved customer...">${order.feedback || ""}</textarea>
 
-                        <button onclick="saveFeedback(${order.id})">Send Feedback</button>
-                        <button onclick="deleteOrder(${order.id})">Delete Order</button>
-                    </div>
-                `;
-            });
+                <button onclick="saveFeedback(${order.id})" class="btn btn-dark">Send Feedback</button>
+                <button onclick="deleteOrder(${order.id})" class="btn btn-outline-dark">Delete Order</button>
+            </div>
+        `;
+    });
+}
+
+function saveFeedback(orderId){
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let feedbackText = document.getElementById("feedback-" + orderId).value;
+
+    orders = orders.map(function(order){
+        if(order.id === orderId){
+            order.feedback = feedbackText;
+            order.status = "Responded";
         }
+        return order;
+    });
 
-        function saveFeedback(orderId){
-            let orders = JSON.parse(localStorage.getItem("orders")) || [];
-            let feedbackText = document.getElementById("feedback-" + orderId).value;
+    localStorage.setItem("orders", JSON.stringify(orders));
+    alert("Feedback has been saved for the customer.");
+    displayOrders();
+}
 
-            orders = orders.map(function(order){
-                if(order.id === orderId){
-                    order.feedback = feedbackText;
-                    order.status = "Responded";
-                }
-                return order;
-            });
+function deleteOrder(orderId){
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders = orders.filter(function(order){
+        return order.id !== orderId;
+    });
 
-            localStorage.setItem("orders", JSON.stringify(orders));
-            alert("Feedback has been saved for the customer.");
-            displayOrders();
-        }
+    localStorage.setItem("orders", JSON.stringify(orders));
+    displayOrders();
+}
 
-        function deleteOrder(orderId){
-            let orders = JSON.parse(localStorage.getItem("orders")) || [];
-            orders = orders.filter(function(order){
-                return order.id !== orderId;
-            });
-
-            localStorage.setItem("orders", JSON.stringify(orders));
-            displayOrders();
-        }
-
-        window.onload = displayOrders;
-    </script>
+window.onload = displayOrders;
+</script>
 </head>
 <body>
 
-<header>
-<h1>Heavenly Treatz Bakels</h1>
 </header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -90,61 +88,40 @@
 </a>
 
 
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
-      <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="place order.html">Place Order</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="customer-feedback.html">Customer Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about us.html">About Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="store.html">Store</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="place order.html">Place Order</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="customer-feedback.html">Customer Feedback</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact us.html">Contact</a>
-                    </li>
-     </ul>
-
-     </div>
-
+<main class="container py-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h2>Orders Dashboard</h2>
+            <p>Welcome to the orders dashboard.</p>
+            <div id="ordersContainer"></div>
+        </div>
     </div>
-
-</nav>
-
-<main>
-
-<h2>Orders Dashboard</h2>
-<p>Welcome to the orders dashboard.</p>
-
-<div id="ordersContainer"></div>
-
 </main>
 
-<footer>
-<p>&copy; 2026 Heavenly Treatz Bakels</p>
+<footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2026 Heavenly Treatz Bakels</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
