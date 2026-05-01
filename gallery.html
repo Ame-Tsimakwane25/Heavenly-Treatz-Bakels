@@ -5,151 +5,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cake Gallery - Heavenly Treatz Bakels</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <script>
-        function openLightbox(imageSrc, imageName){
-            document.getElementById("lightbox").style.display = "block";
-            document.getElementById("lightbox-image").src = imageSrc;
-            document.getElementById("lightbox-caption").innerText = imageName;
-        }
+<link rel="stylesheet" href="styles.css">
 
-        function closeLightbox(){
-            document.getElementById("lightbox").style.display = "none";
-        }
-    </script>
+<script>
+function openLightbox(imageSrc, imageName){
+document.getElementById("lightbox").style.display = "block";
+document.getElementById("lightbox-image").src = imageSrc;
+document.getElementById("lightbox-caption").innerText = imageName;
+}
+function closeLightbox(){
+document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
 </head>
+
 <body>
 
-</header>
+<header>
+    <h1>Heavenly Treatz Bakels</h1>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-     <div class="container">
+<div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="Heavenly Treatz Bakels Logo.jpg" alt="Logo" class="logo me-2">
-        <span class="navbar-text text-white">Heavenly Treatz Bakels</span>
+<img src="Heavenly Treatz Bakels Logo.jpg"
+alt="Logo"
+class="logo me-2">
+
+<span class="text-white">
+Heavenly Treatz Bakels
+</span>
+
 </a>
 
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<span class="navbar-toggler-icon"></span>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="place order.html">Place Order</a></li>
-                    <li class="nav-item"><a class="nav-link" href="customer-feedback.html">Customer Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact us.html">Contact</a></li>
+</button>
+
+     <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+       <li class="nav-item">
+           <a class="nav-link" href="index.html">Home</a>
+       </li>
+
+       <li class="nav-item">
+           <a class="nav-link" href="about us.html">About Us</a>
+       </li>
+
+         <li class="nav-item">
+        <a class="nav-link" href="store.html">Store</a>
+      </li>
+
+<li class="nav-item">
+<a class="nav-link active" href="gallery.html">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="place order.html">Place Order</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="customer-feedback.html">Customer Feedback</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="contact us.html">Contact</a>
+</li>
+
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<main class="container py-5">
-    <div class="card shadow-sm border-0">
-        <div class="card-body">
-            <h2 class="text-center mb-3">Our Cake Gallery</h2>
-            <p class="text-center">
-                Here are some of the beautiful cakes we have made so far since starting our business.
-            </p>
+<main>
+    <div class="content-box">
+        <h2 class="gallery-title">Our Cake Gallery</h2>
+        <p class="text-center">
+            Here are some of the beautiful cakes we have made so far since starting our business.
+        </p>
 
-            <div class="gallery-grid">
+<div class="gallery-grid">
 
-                <div class="gallery-item">
-                    <img src="bento-pack a.jpg" alt="Bento Cake 1" onclick="openLightbox('Bento Pack 1.jpeg', 'Bento Cake 1')">
-                    <p>Bento Cake 1</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="wedding-cake a.jpg" alt="Wedding Cake 1" onclick="openLightbox('Wedding Cake 1.jpeg', 'Wedding Cake 1')">
-                    <p>Wedding Cake 1</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="character-cake a.jpg" alt="Character Cake" onclick="openLightbox('Character Cake.jpeg', 'Character Cake')">
-                    <p>Character Cake</p>
-                </div>
+<div class="gallery-item">
+<img src="bento-pack a.jpg"
+onclick="openLightbox('bento-pack a.jpg','Bento Cake 1')">
+<p>Bento Cake 1</p>
+</div>
 
-                <div class="gallery-item">
-                    <img src="cupcake-set a.jpg" alt="Cupcake Set" onclick="openLightbox('Cupcake set.jpeg', 'Cupcake Set')">
-                    <p>Cupcake Set</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="birthday-cake b.jpg" alt="Birthday Cake 1" onclick="openLightbox('Birthday Cake .jpeg', 'Birthday Cake')">
-                    <p>Birthday Cake </p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="wedding-cake b.jpg" alt="Wedding Cake 2" onclick="openLightbox('Wedding Cake 2.jpeg', 'Wedding Cake 2')">
-                    <p>Wedding Cake 2</p>
-                </div>
+<div class="gallery-item">
+<img src="wedding-cake a.jpg"
+onclick="openLightbox('wedding-cake a.jpg','Wedding Cake 1')">
+<p>Wedding Cake 1</p>
+</div>
 
-                <div class="gallery-item">
-                    <img src="character-cake b.jpg" alt="Cartoon Cake" onclick="openLightbox('Cartoon cake.jpeg', 'Cartoon Cake')">
-                    <p>Cartoon Cake</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="bento-pack b.jpg" alt="Custom Made 1" onclick="openLightbox('Bento Pack 2.jpeg', 'Custom Made 1')">
-                    <p>Custom Made 1</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="cupcake-set c.jpg" alt="Cake Design 1" onclick="openLightbox('Cupcake Set 3.jpeg', 'Cake Design 1')">
-                    <p>Cake Design 1</p>
-                </div>
+<div class="gallery-item">
+<img src="character-cake a.jpg"
+onclick="openLightbox('character-cake a.jpg','Character Cake')">
+<p>Character Cake</p>
+</div>
 
-                <div class="gallery-item">
-                    <img src="cupcake-set b.jpg" alt="Cake Design 2" onclick="openLightbox('Cupcake Set 2.jpeg', 'Cake Design 2')">
-                    <p>Cake Design 2</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="character-cake c.jpg" alt="Cake Design 3" onclick="openLightbox('Character Cake 3.jpeg', 'Cake Design 3')">
-                    <p>Cake Design 3</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="cupcake-set d.jpg" alt="Cake Design 4" onclick="openLightbox('Cupcake Set 4.jpeg', 'Cake Design 4')">
-                    <p>Cake Design 4</p>
-                </div>
+<div class="gallery-item">
+<img src="cupcake-set a.jpg"
+onclick="openLightbox('cupcake-set a.jpg','Cupcake Set')">
+<p>Cupcake Set</p>
+</div>
 
-                <div class="gallery-item">
-                    <img src="birthday-cake a.jpg" alt="Cake Design 4" onclick="openLightbox('Birthday Cake 1.jpeg', 'Cake Design 4')">
-                    <p>Cake Design 4</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="birthday-cake c.jpg" alt="Cake Design 4" onclick="openLightbox('Birthday Cake 3.jpeg', 'Cake Design 4')">
-                    <p>Cake Design 4</p>
-                </div>
 
-                <div class="gallery-item">
-                    <img src="cake-sickles a.jpg" alt="Cake Design 4" onclick="openLightbox('Sickles.jpeg', 'Cake Design 4')">
-                    <p>Cake Design 4</p>
-                </div>
+<div class="gallery-item">
+<img src="birthday-cake b.jpg"
+onclick="openLightbox('birthday-cake b.jpg','Birthday Cake')">
+<p>Birthday Cake</p>
+</div>
 
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+<div class="gallery-item">
+<img src="wedding-cake b.jpg"
+onclick="openLightbox('wedding-cake b.jpg','Wedding Cake 2')">
+<p>Wedding Cake 2</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="character-cake b.jpg"
+onclick="openLightbox('character-cake b.jpg','Cartoon Cake')">
+<p>Cartoon Cake</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="bento-pack b.jpg"
+onclick="openLightbox('bento-pack b.jpg','Custom Cake')">
+<p>Custom Cake</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="cupcake-set c.jpg"
+onclick="openLightbox('cupcake-set c.jpg','Cupcake Design')">
+<p>Cupcake Design</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="cupcake-set b.jpg"
+onclick="openLightbox('cupcake-set b.jpg','Cupcake Design')">
+<p>Cupcake Design</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="character-cake c.jpg"
+onclick="openLightbox('character-cake c.jpg','Character Cake')">
+<p>Character Cake</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="cupcake-set d.jpg"
+onclick="openLightbox('cupcake-set d.jpg','Cupcake Design')">
+<p>Cupcake Design</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="birthday-cake a.jpg"
+onclick="openLightbox('birthday-cake a.jpg','Birthday Cake')">
+<p>Birthday Cake</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="birthday-cake c.jpg"
+onclick="openLightbox('birthday-cake c.jpg','Birthday Cake')">
+<p>Birthday Cake</p>
+</div>
+
+
+
+<div class="gallery-item">
+<img src="cake-sickles a.jpg"
+onclick="openLightbox('cake-sickles a.jpg','Cake Sickles')">
+<p>Cake Sickles</p>
+</div>
+
+
+
+</div>
+
 </main>
 
 <div id="lightbox" class="lightbox">
-    <span class="close-btn" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-image" src="" alt="Large Cake View">
-    <p id="lightbox-caption"></p>
-</div>
 
+<span class="close-btn"
+onclick="closeLightbox()">
+&times;
+</span>
+
+<img id="lightbox-image">
+<p id="lightbox-caption"></p>
+
+</div>
 <footer class="bg-dark text-white text-center py-3">
     <p class="mb-0">&copy; 2026 Heavenly Treatz Bakels. All rights reserved.</p>
 </footer>
